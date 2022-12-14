@@ -21,13 +21,14 @@ namespace WindowsFormsApp2
         static string SqlCon = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aya Academy\Desktop\C-Desktop-gorsel-programlama-donem-projesi-Hospital-Management-project\Hastane\WindowsFormsApp2\Database.mdf;Integrated Security=True";
         SqlConnection con = new SqlConnection(SqlCon);
         SqlCommand cmd;
+        SqlDataAdapter sda;
         private void btnAddPatient_Click(object sender, EventArgs e)
         {
             labelIndecator1.ForeColor = System.Drawing.Color.Red;
             labelIndecator2.ForeColor = System.Drawing.Color.Black;
-            labelIndecator3.ForeColor = System.Drawing.Color.Black;
             labelIndecator4.ForeColor = System.Drawing.Color.Black;
-
+            pictureBox1.Visible = false;
+            panel2.Visible = false;
             panel1.Visible = true;
         }
 
@@ -35,13 +36,21 @@ namespace WindowsFormsApp2
         {
             labelIndecator2.ForeColor = System.Drawing.Color.Red;
             labelIndecator1.ForeColor = System.Drawing.Color.Black;
-            labelIndecator3.ForeColor = System.Drawing.Color.Black;
             labelIndecator4.ForeColor = System.Drawing.Color.Black;
+            pictureBox1.Visible = false;
+            panel1.Visible = true;
+            panel2.Visible= true;
+            string query = "select * from Patient";
+            con.Open();
+            sda = new SqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            con.Close();
+            dataGridView1.DataSource = dt;
         }
 
         private void btnFullHistory_Click(object sender, EventArgs e)
         {
-            labelIndecator3.ForeColor = System.Drawing.Color.Red;
             labelIndecator2.ForeColor = System.Drawing.Color.Black;
             labelIndecator1.ForeColor = System.Drawing.Color.Black;
             labelIndecator4.ForeColor = System.Drawing.Color.Black;
@@ -51,7 +60,6 @@ namespace WindowsFormsApp2
         {
             labelIndecator4.ForeColor = System.Drawing.Color.Red;
             labelIndecator2.ForeColor = System.Drawing.Color.Black;
-            labelIndecator3.ForeColor = System.Drawing.Color.Black;
             labelIndecator1.ForeColor = System.Drawing.Color.Black;
 
         }
@@ -84,6 +92,21 @@ namespace WindowsFormsApp2
 
 
                 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string query = "update Patient set Symptoms='"+textBox2.Text+"',Diagnosis='"+textBox3.Text+"',Medicines='"+textBox4.Text+"',Ward_Req='"+comboBox1.Text+"',WardType='"+comboBox2.Text+"' where ID='"+textBox1.Text+"'";
+            con.Open();
+            cmd=new SqlCommand(query, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Data Updated Succesfully!");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
         }
     }
 }
