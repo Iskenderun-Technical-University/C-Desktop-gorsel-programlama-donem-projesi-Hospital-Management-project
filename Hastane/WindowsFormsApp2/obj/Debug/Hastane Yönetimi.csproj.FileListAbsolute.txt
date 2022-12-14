@@ -21,3 +21,17 @@ C:\Users\Aya Academy\Desktop\Hastane\WindowsFormsApp2\obj\Debug\Hastane Yönetim
 C:\Users\Aya Academy\Desktop\Hastane\WindowsFormsApp2\obj\Debug\Hastane Yönetimi.csproj.CoreCompileInputs.cache
 C:\Users\Aya Academy\Desktop\Hastane\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\Users\Aya Academy\Desktop\Hastane\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\Aya Academy\Desktop\C-Desktop-gorsel-programlama-donem-projesi-Hospital-Management-project\Hastane\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\Aya Academy\Desktop\C-Desktop-gorsel-programlama-donem-projesi-Hospital-Management-project\Hastane\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\Aya Academy\Desktop\C-Desktop-gorsel-programlama-donem-projesi-Hospital-Management-project\Hastane\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\Aya Academy\Desktop\C-Desktop-gorsel-programlama-donem-projesi-Hospital-Management-project\Hastane\WindowsFormsApp2\obj\Debug\Hastane Yönetimi.csproj.AssemblyReference.cache
+C:\Users\Aya Academy\Desktop\C-Desktop-gorsel-programlama-donem-projesi-Hospital-Management-project\Hastane\WindowsFormsApp2\obj\Debug\Hastane Yönetimi.csproj.SuggestedBindingRedirects.cache
+C:\Users\Aya Academy\Desktop\C-Desktop-gorsel-programlama-donem-projesi-Hospital-Management-project\Hastane\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Dashboard.resources
+C:\Users\Aya Academy\Desktop\C-Desktop-gorsel-programlama-donem-projesi-Hospital-Management-project\Hastane\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+C:\Users\Aya Academy\Desktop\C-Desktop-gorsel-programlama-donem-projesi-Hospital-Management-project\Hastane\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\Aya Academy\Desktop\C-Desktop-gorsel-programlama-donem-projesi-Hospital-Management-project\Hastane\WindowsFormsApp2\obj\Debug\Hastane Yönetimi.csproj.GenerateResource.cache
+C:\Users\Aya Academy\Desktop\C-Desktop-gorsel-programlama-donem-projesi-Hospital-Management-project\Hastane\WindowsFormsApp2\obj\Debug\Hastane Yönetimi.csproj.CoreCompileInputs.cache
+C:\Users\Aya Academy\Desktop\C-Desktop-gorsel-programlama-donem-projesi-Hospital-Management-project\Hastane\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\Aya Academy\Desktop\C-Desktop-gorsel-programlama-donem-projesi-Hospital-Management-project\Hastane\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\Aya Academy\Desktop\C-Desktop-gorsel-programlama-donem-projesi-Hospital-Management-project\Hastane\WindowsFormsApp2\bin\Debug\Database.mdf
+C:\Users\Aya Academy\Desktop\C-Desktop-gorsel-programlama-donem-projesi-Hospital-Management-project\Hastane\WindowsFormsApp2\bin\Debug\Database_log.ldf
