@@ -22,24 +22,24 @@ namespace WindowsFormsApp2
         SqlConnection con = new SqlConnection(SqlCon);
         SqlCommand cmd;
         SqlDataAdapter sda;
+
         private void btnAddPatient_Click(object sender, EventArgs e)
-        {
+        {  //Changing The Indecator Colors
             labelIndecator1.ForeColor = System.Drawing.Color.Red;
-            labelIndecator2.ForeColor = System.Drawing.Color.Black;
-            labelIndecator4.ForeColor = System.Drawing.Color.Black;
-            pictureBox1.Visible = false;
-            panel2.Visible = false;
+            labelIndecator2.ForeColor = labelIndecator4.ForeColor = System.Drawing.Color.Black;
+           //To Show Add Patient page
+            pictureBox1.Visible = pictureBox2.Visible = panel2.Visible = false;
             panel1.Visible = true;
         }
 
         private void btnAddDiagnosis_Click(object sender, EventArgs e)
-        {
+        {  //Changing The Indecator Colors
             labelIndecator2.ForeColor = System.Drawing.Color.Red;
-            labelIndecator1.ForeColor = System.Drawing.Color.Black;
-            labelIndecator4.ForeColor = System.Drawing.Color.Black;
-            pictureBox1.Visible = false;
-            panel1.Visible = true;
-            panel2.Visible= true;
+            labelIndecator1.ForeColor = labelIndecator4.ForeColor = System.Drawing.Color.Black;
+           //To Show More Details About The Patient
+            pictureBox1.Visible = pictureBox2.Visible = false;
+            panel1.Visible = panel2.Visible = true;
+           //To Show The Patient's Data in DGV
             string query = "select * from Patient";
             con.Open();
             sda = new SqlDataAdapter(query, con);
@@ -49,63 +49,65 @@ namespace WindowsFormsApp2
             dataGridView1.DataSource = dt;
         }
 
-        private void btnFullHistory_Click(object sender, EventArgs e)
-        {
-            labelIndecator2.ForeColor = System.Drawing.Color.Black;
-            labelIndecator1.ForeColor = System.Drawing.Color.Black;
-            labelIndecator4.ForeColor = System.Drawing.Color.Black;
-        }
-
         private void btnHospital_Click(object sender, EventArgs e)
-        {
+        {  //Changing The Indecator Colors
             labelIndecator4.ForeColor = System.Drawing.Color.Red;
-            labelIndecator2.ForeColor = System.Drawing.Color.Black;
-            labelIndecator1.ForeColor = System.Drawing.Color.Black;
-
+            labelIndecator2.ForeColor = labelIndecator1.ForeColor = System.Drawing.Color.Black;
+           //To Show The Hospital Picture
+            pictureBox2.Visible = panel1.Visible = panel2.Visible = true;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
-            panel1.Visible = false;
+            //To Close The Entire App when it Clicked
+            Application.Exit();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                string query="insert into Patient values ('"+txtName.Text+"','"+txtAddress.Text+"','"+txtContact.Text+"','"+txtAge.Text+"','"+comboGender.Text+"','"+txtBlood.Text+"','"+txtAny.Text+"')";
+               //To Add A new Patient
+                string query="insert into Patient (Name,Full_Address,Contact,Age,Gender,Blood_Group,Major_Disease) values ('"+txtName.Text+"','"+txtAddress.Text+"','"+txtContact.Text+"','"+txtAge.Text+"','"+comboGender.Text+"','"+txtBlood.Text+"','"+txtAny.Text+"')";
                 con.Open();
                 cmd = new SqlCommand(query, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
+                MessageBox.Show("The Patient Added Succesfully!");
+                //Clear The Data in The TextBoxes
+                txtAddress.Clear(); txtAge.Clear(); txtAny.Clear(); txtBlood.Clear(); txtContact.Clear(); txtName.Clear();
+
             }
-            catch(Exception)
+            catch
             {
+               //To Show if Something get wrong
                 MessageBox.Show("There Is A Problem Please,Check Your Data And Try Again");
-            }
-
-
-
-                
+            }    
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+           //updating the Database's Table -Patient- to add more information of the patient
             string query = "update Patient set Symptoms='"+textBox2.Text+"',Diagnosis='"+textBox3.Text+"',Medicines='"+textBox4.Text+"',Ward_Req='"+comboBox1.Text+"',WardType='"+comboBox2.Text+"' where ID='"+textBox1.Text+"'";
             con.Open();
             cmd=new SqlCommand(query, con);
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Data Updated Succesfully!");
+            //Clear The Data in The TextBoxes
+            textBox2.Clear(); textBox3.Clear(); textBox4.Clear();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
+           //To Close The Entire App when it Clicked
+            Application.Exit();
+        }
+
+        private void dataGridView1_Click(object sender, EventArgs e)
+        {
+           //to send the patient ID from the DGV to the TextBox
             textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
         }
     }
