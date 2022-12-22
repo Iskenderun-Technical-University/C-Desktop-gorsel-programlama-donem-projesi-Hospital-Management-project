@@ -29,8 +29,7 @@ namespace WindowsFormsApp2
 
             if (username == "hms" && pass == "pass")
             {
-                // MessageBox.Show("you have entered right username and password");
-
+               
                 this.Hide();
                 Dashboard ds = new Dashboard();
                 ds.Show();
@@ -38,7 +37,7 @@ namespace WindowsFormsApp2
             }
             else
             {
-                MessageBox.Show("wrong user id or password");
+                MessageBox.Show("şifree yada kulancı adı yalnış ");
             }
         }
     }
