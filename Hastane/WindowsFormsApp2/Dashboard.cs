@@ -18,7 +18,7 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
         }
-        static string SqlCon = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aya Academy\Desktop\C-Desktop-gorsel-programlama-donem-projesi-Hospital-Management-project\Hastane\WindowsFormsApp2\Database.mdf;Integrated Security=True";
+        static string SqlCon = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Hp\OneDrive\Belgeler\C-Desktop-gorsel-programlama-donem-projesi-Hospital-Management-project\Hastane\WindowsFormsApp2\Database.mdf;Integrated Security=True";
         SqlConnection con = new SqlConnection(SqlCon);
         SqlCommand cmd;
         SqlDataAdapter sda;
